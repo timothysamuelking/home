@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import { Sparkles, Loader2, Eye, ArrowRight } from 'lucide-react';
-import { generateBrandScript } from '../services/geminiService';
 import { BrandScript } from '../types';
+
+// Mock function to simulate AI generation (replace with your preferred API)
+const generateBrandScript = async (company: string, product: string, audience: string): Promise<BrandScript> => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  
+  // Return mock data based on inputs
+  return {
+    character: `${audience} who want to achieve more with ${product.toLowerCase()}.`,
+    problem: `They struggle to get the results they need because existing solutions are complicated, expensive, or unreliable.`,
+    guide: `${company} understands these challenges and offers a proven solution that's simple and effective.`,
+    plan: `1. Schedule a consultation. 2. Implement our system. 3. See measurable results.`,
+    callToAction: `Get Started with ${company} Today`,
+    failure: `Continuing to waste time and money on solutions that don't work, falling behind competitors.`,
+    success: `Clear, measurable results that transform your business and give you peace of mind.`
+  };
+};
 
 export const AIBrandScript: React.FC = () => {
   const [step, setStep] = useState<'input' | 'loading' | 'result'>('input');
@@ -21,7 +37,7 @@ export const AIBrandScript: React.FC = () => {
       setResult(data);
       setStep('result');
     } catch (err) {
-      setError('Something went wrong. Please ensure your API key is valid and try again.');
+      setError('Something went wrong. Please try again.');
       setStep('input');
     }
   };
