@@ -5,10 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sam King Videos</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- All your font links and tailwind config -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Oswald"', "sans-serif"],
+              sans: ['"Public Sans"', '"Inter"', "sans-serif"],
+            },
+            colors: {
+              brand: {
+                red: "#E31C25",
+                gold: "#FDB000",
+                dark: "#111111",
+                gray: "#F9F9F9",
+                teal: "#14B8A6",
+                blue: "#3B82F6",
+                pink: "#EC4899",
+                cream: "#F7F6E4",
+              },
+            },
+            borderRadius: {
+              'brand': '26px',
+              'card': '36px',
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(0,0,0,0.05)',
+              'card': '0 25px 50px -12px rgba(0,0,0,0.25)',
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Public Sans", sans-serif;
+        color: #333;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #888;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
